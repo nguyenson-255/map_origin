@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bottom_sheet_background.xml" value="0.107" />
         <entry key="app/src/main/res/drawable/ic_home_background.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/ic_home_foreground.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1665" />
@@ -10,11 +11,15 @@
         <entry key="app/src/main/res/drawable/ic_person_foreground.xml" value="0.294" />
         <entry key="app/src/main/res/layout/activity_family.xml" value="0.12318840579710146" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.12318840579710146" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.15729166666666666" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/bottom_sheet_background.xml" value="0.13360507246376813" />
+        <entry key="app/src/main/res/layout/fragment_hide_map.xml" value="0.13020833333333334" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.15729166666666666" />
+        <entry key="app/src/main/res/layout/items_family.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/list_family.xml" value="0.18" />
         <entry key="app/src/main/res/layout/taskbar.xml" value="0.3046875" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.31979166666666664" />
       </map>

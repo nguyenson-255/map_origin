@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class User extends Fragment {
     ImageView profile_image_avatar;
     ImageButton profile_image_edit,profile_image_favour,profile_image_list,profile_image_logout;
-
+    MainActivity main;
     public User(){
         // require a empty public constructor
     }
@@ -23,6 +26,7 @@ public class User extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         LinearLayout layout_user = (LinearLayout) inflater.inflate(R.layout.activity_user, container, false);
+        main = (MainActivity)getActivity();
 
         profile_image_edit= layout_user.findViewById(R.id.profile_image_edit);
         profile_image_edit.setImageResource(R.drawable.edit);
@@ -43,11 +47,11 @@ public class User extends Fragment {
         profile_image_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Profile profile = new Profile();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, profile).commit();
+                main.onMsgFromFragToMain("User-Frag","Profile");
             }
         });
         return layout_user;
 
     }
+
 }

@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,6 +21,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Map extends Fragment {
 
+    Button btnHideMap;
+    MainActivity main;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -42,7 +47,21 @@ public class Map extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_map, container, false);
+
+        RelativeLayout linearLayout = (RelativeLayout) inflater.inflate(R.layout.fragment_map, container, false);
+        main = (MainActivity)getActivity();
+
+        btnHideMap = linearLayout.findViewById(R.id.btnHideMap);
+
+
+        btnHideMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                main.onMsgFromFragToMain("Map-Frag","ShowMap");
+            }
+        });
+
+        return linearLayout;
     }
 
     @Override
