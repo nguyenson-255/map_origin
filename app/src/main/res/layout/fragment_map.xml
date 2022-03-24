@@ -36,8 +36,40 @@
         android:layout_marginBottom="583dp"
         android:src="@drawable/ic_baseline_my_location_24" />
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSetting"
+        android:layout_alignRight="@id/btnSetting">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@id/main_menu"
+                layout="@layout/main_menu"></include>
+        </FrameLayout>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSetting"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="9dp"
+        android:layout_alignRight="@id/btnSetting">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <include layout="@layout/view_mode" android:id="@id/view_mode"></include>
+        </FrameLayout>
+    </FrameLayout>
+
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -57,7 +89,7 @@
         android:src="@drawable/ic_baseline_room_24" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -65,5 +97,7 @@
         android:layout_marginEnd="114dp"
         android:layout_marginBottom="39dp"
         android:src="@drawable/ic_baseline_search_24" />
+
+
 
 </RelativeLayout>

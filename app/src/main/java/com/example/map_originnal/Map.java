@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -22,7 +23,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class Map extends Fragment {
 
     Button btnHideMap;
+    ImageButton btnSetting;
     MainActivity main;
+    View main_menu,view_mode;
+    Boolean show_main_menu=false;
+    Boolean show_view_mode=false;
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -52,7 +58,9 @@ public class Map extends Fragment {
         main = (MainActivity)getActivity();
 
         btnHideMap = linearLayout.findViewById(R.id.btnHideMap);
-
+        btnSetting = linearLayout.findViewById(R.id.btnSetting);
+        main_menu=linearLayout.findViewById(R.id.main_menu);
+        view_mode=linearLayout.findViewById(R.id.view_mode);
 
         btnHideMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +69,35 @@ public class Map extends Fragment {
             }
         });
 
-        return linearLayout;
-    }
+        main_menu.animate().alpha(0.0f);
+        view_mode.animate().alpha(0.0f);
+
+        if(show_main_menu) {
+            btnSetting.animate().alpha(1f).setDuration(250);
+            main_menu.animate().alpha(0.0f).setDuration(250);
+            show_main_menu=false;
+
+            if(show_view_mode) {
+                main_menu.findViewById(R.id.txtMapType).animate().alpha(1f).setDuration(250);
+                view_mode.animate().alpha(0.0f).setDuration(250);
+                show_view_mode=false;
+            }
+            else {
+                main_menu.findViewById(R.id.txtMapType).animate().alpha(0.5f).setDuration(250);
+                view_mode.animate().alpha(1.0f).setDuration(250);
+                show_view_mode=true;
+            }
+        }
+        else {
+            btnSetting.animate().alpha(0.5f).setDuration(250);
+            main_menu.animate().alpha(1f).setDuration(250);
+            show_main_menu=true;
+        }
+
+
+
+
+        return linearLayout; }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
